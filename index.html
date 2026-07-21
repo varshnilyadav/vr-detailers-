@@ -33,7 +33,7 @@
           <a href="#portfolio">Portfolio</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#contact">Contact</a>
-          <a href="https://www.instagram.com/vr_detailers/" target="_blank" style="margin-left: 0.5rem; font-size: 1.2rem;"><i class="fab fa-instagram text-gold"></i></a>
+          <a href="https://www.instagram.com/vr_detailers/" target="_blank" class="btn btn-outline" style="padding: 0.75rem 1.5rem; margin-left: 1rem;"><i class="fab fa-instagram mr-2"></i> @vr_detailers</a>
           <a href="#booking" class="btn btn-gold" style="padding: 0.75rem 1.5rem; margin-left: 1rem;">Book Now</a>
         </nav>
         
@@ -168,29 +168,32 @@
             <div class="premium-brand-logo"><img src="/images/logo-3m.png" alt="3M" class="pb-img-logo" /></div>
           </div>
           <div class="brand-item" title="Meguiar's">
-            <div class="premium-brand-logo"><img src="/images/logo-meguiars.png" alt="Meguiar's" class="pb-img-logo" />
-            </div>
+            <div class="premium-brand-logo"><img src="/images/logo-meguiars.png" alt="Meguiar's" class="pb-img-logo" /></div>
           </div>
           <div class="brand-item" title="Gtechniq">
-            <div class="premium-brand-logo"><img src="/images/logo-gtechniq.png" alt="Gtechniq" class="pb-img-logo" />
-            </div>
+            <div class="premium-brand-logo"><img src="/images/logo-gtechniq.png" alt="Gtechniq" class="pb-img-logo" /></div>
           </div>
           <div class="brand-item" title="Koch-Chemie">
-            <div class="premium-brand-logo"><img src="/images/logo-koch-chemie.png" alt="Koch-Chemie"
-                class="pb-img-logo" /></div>
+            <div class="premium-brand-logo"><img src="/images/logo-koch-chemie.png" alt="Koch-Chemie" class="pb-img-logo" /></div>
           </div>
           <div class="brand-item" title="Rupes">
             <div class="premium-brand-logo"><img src="/images/logo-rupes.png" alt="Rupes" class="pb-img-logo" /></div>
           </div>
-          <div class="brand-item" title="Kärcher">
-            <div class="premium-brand-logo"><img src="/images/logo-karcher.png" alt="Kärcher" class="pb-img-logo" /></div>
+          <!-- Duplicate for smooth looping -->
+          <div class="brand-item" title="3M">
+            <div class="premium-brand-logo"><img src="/images/logo-3m.png" alt="3M" class="pb-img-logo" /></div>
           </div>
-          <div class="brand-item" title="CarPro">
-            <div class="premium-brand-logo"><img src="/images/logo-carpro.png" alt="CarPro" class="pb-img-logo" /></div>
+          <div class="brand-item" title="Meguiar's">
+            <div class="premium-brand-logo"><img src="/images/logo-meguiars.png" alt="Meguiar's" class="pb-img-logo" /></div>
           </div>
-          <div class="brand-item" title="Menzerna">
-            <div class="premium-brand-logo"><img src="/images/logo-menzerna.png" alt="Menzerna" class="pb-img-logo" />
-            </div>
+          <div class="brand-item" title="Gtechniq">
+            <div class="premium-brand-logo"><img src="/images/logo-gtechniq.png" alt="Gtechniq" class="pb-img-logo" /></div>
+          </div>
+          <div class="brand-item" title="Koch-Chemie">
+            <div class="premium-brand-logo"><img src="/images/logo-koch-chemie.png" alt="Koch-Chemie" class="pb-img-logo" /></div>
+          </div>
+          <div class="brand-item" title="Rupes">
+            <div class="premium-brand-logo"><img src="/images/logo-rupes.png" alt="Rupes" class="pb-img-logo" /></div>
           </div>
         </div>
       </div>
@@ -515,11 +518,11 @@
         </div>
         
         <div class="slider-container fade-up" id="slider-container" style="position:relative; max-width: 1000px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-          <!-- Before Image (Base) -->
-          <img src="/images/thar-before.png" alt="Thar Before PPF" style="width: 100%; display: block;">
+          <!-- Base Image (After / Polished) -->
+          <img src="/images/thar-after.png" alt="Thar After PPF" style="width: 100%; display: block;">
           
-          <!-- After Image (Overlay) -->
-          <img src="/images/thar-after.png" alt="Thar After PPF" id="after-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+          <!-- Overlay Image (Before / Dusty) -->
+          <img src="/images/thar-before.png" alt="Thar Before PPF" id="after-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
           
           <!-- Range Slider Input -->
           <input type="range" min="0" max="100" value="50" id="split-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; z-index: 10; cursor: col-resize; margin: 0;">
