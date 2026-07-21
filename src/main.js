@@ -112,40 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(counter => counterObserver.observe(counter));
 
   // --- Before & After Slider ---
-  const sliderContainer = document.getElementById('slider-container');
-  const sliderBefore = document.getElementById('slider-before');
-  const sliderHandle = document.getElementById('slider-handle');
+  const splitSlider = document.getElementById('split-slider');
+  const afterImg = document.getElementById('after-img');
+  const sliderBar = document.getElementById('slider-bar');
 
-  if (sliderContainer && sliderBefore && sliderHandle) {
-    let isDragging = false;
+  if (splitSlider && afterImg && sliderBar) {
+      const updateSlider = () => {
+          const val = splitSlider.value;
+          // Update the clip path of the after-image
+          afterImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+          // Update the position of the sliding chrome bar
+          sliderBar.style.left = `${val}%`;
+      };
 
-    const moveSlider = (xPos) => {
-      const rect = sliderContainer.getBoundingClientRect();
-      // Calculate percentage based on mouse position relative to container
-      let percentage = ((xPos - rect.left) / rect.width) * 100;
+      // Trigger on range change
+      splitSlider.addEventListener('input', updateSlider);
       
-      // Keep within bounds
-      percentage = Math.max(0, Math.min(percentage, 100));
-      
-      sliderBefore.style.width = `${percentage}%`;
-      sliderHandle.style.left = `${percentage}%`;
-    };
-
-    // Mouse events
-    sliderHandle.addEventListener('mousedown', () => { isDragging = true; });
-    window.addEventListener('mouseup', () => { isDragging = false; });
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      moveSlider(e.clientX);
-    });
-
-    // Touch events
-    sliderHandle.addEventListener('touchstart', () => { isDragging = true; }, {passive: true});
-    window.addEventListener('touchend', () => { isDragging = false; });
-    window.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      moveSlider(e.touches[0].clientX);
-    }, {passive: true});
+      // Initial call to set 50% split on mount
+      updateSlider();
   }
 
   // --- Portfolio Filtering (Visual only for now) ---

@@ -8,6 +8,7 @@
     <meta name="description" content="VR Detailers offers Professional Car Wash, Paint Correction, Teflon Coating, Ceramic Coating, Graphene Coating, and Paint Protection Film (PPF) in Nallagandla, Hyderabad.">
     <meta name="keywords" content="Car Wash Nallagandla, PPF Nallagandla, Paint Correction Nallagandla, Teflon Coating Hyderabad, Ceramic Coating Nallagandla, Graphene Coating Nallagandla, Paint Protection Film Hyderabad, Luxury Car Detailing Hyderabad">
     
+    <link rel="preload" href="/logo-vr.jpg" as="image">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
@@ -46,7 +47,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2000" alt="Luxury Car Detailing" class="hero-bg" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2000" alt="Luxury Car Detailing" class="hero-bg" fetchpriority="high">
       <div class="hero-overlay"></div>
       
       <div class="container relative z-10">
@@ -513,23 +514,25 @@
           <p>Slide to see the difference.</p>
         </div>
         
-        <div class="slider-container fade-up" id="slider-container">
-          <!-- After Image -->
-          <img src="/images/thar-after.png" alt="Thar After PPF" class="slider-img slider-after">
-          <div class="slider-label label-after">AFTER</div>
+        <div class="slider-container fade-up" id="slider-container" style="position:relative; max-width: 1000px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+          <!-- Before Image (Base) -->
+          <img src="/images/thar-before.png" alt="Thar Before PPF" style="width: 100%; display: block;">
           
-          <!-- Before Image Wrapper -->
-          <div class="slider-img slider-before" id="slider-before">
-            <img src="/images/thar-before.png" alt="Thar Before PPF" style="width: 200%; max-width: none; height: 100%; object-fit: cover;">
-            <div class="slider-label label-before">BEFORE</div>
-          </div>
+          <!-- After Image (Overlay) -->
+          <img src="/images/thar-after.png" alt="Thar After PPF" id="after-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
           
-          <!-- Handle -->
-          <div class="slider-handle" id="slider-handle">
-            <div class="slider-button">
+          <!-- Range Slider Input -->
+          <input type="range" min="0" max="100" value="50" id="split-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; z-index: 10; cursor: col-resize; margin: 0;">
+          
+          <!-- Custom Slider Handle UI -->
+          <div id="slider-bar" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #D4AF37; z-index: 5; pointer-events: none; transform: translateX(-50%);">
+            <div class="slider-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #D4AF37; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #090909; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
               <i class="fas fa-arrows-alt-h"></i>
             </div>
           </div>
+          
+          <div class="slider-label label-before" style="z-index: 5;">BEFORE</div>
+          <div class="slider-label label-after" style="z-index: 5;">AFTER</div>
         </div>
       </div>
     </section>
