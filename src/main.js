@@ -2,6 +2,17 @@ import './style.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   
+  // --- Preloader ---
+  const preloader = document.getElementById('preloader');
+  window.addEventListener('load', () => {
+    if (preloader) {
+      preloader.classList.add('hidden');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  });
+
   // --- Navigation & Mobile Menu ---
   const header = document.getElementById('header');
   const hamburger = document.getElementById('hamburger');
