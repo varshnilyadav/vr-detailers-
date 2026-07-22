@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                    `*Message:* ${message ? message : 'N/A'}`;
       
       // Replace with actual business WhatsApp number
-      const whatsappNumber = '919999999999';
+      const whatsappNumber = '917981510874';
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
       
       window.open(whatsappUrl, '_blank');
